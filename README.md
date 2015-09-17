@@ -1,3 +1,5 @@
+https://travis-ci.org/c2h5oh/twitter-text-go.svg?branch=master
+
 # twitter-text-go #
 Twitter-text-go is a [Go](http://golang.org/) port of the various twitter-text handling libraries. 
 
