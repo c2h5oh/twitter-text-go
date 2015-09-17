@@ -20,9 +20,14 @@ const (
 		"\u0300-\u036f" + // Combining diacritics
 		"\u1e00-\u1eff" // Latin Extended Additional (mostly for Vietnamese)
 
-	hashtagAlphaChars = `\p{L}\p{M}` + "\u200c" + "\u3003\u3005\u303b" + "\u0080-\u00ff"
+	hashtagAlphaChars = `\p{L}\p{M}` + // Letters + maks
+		"\u200c-\u200f" + // Zero joiners and non-joiners
+		"\u3003\u3005\u303b" + // Kanji enumarators
+		"\u0080-\u00ff" + // C1
+		`\p{Tibetan}` +
+		`\p{Hebrew}`
 
-	hashtagAlphaNumericChars = `\p{N}_` + hashtagAlphaChars
+	hashtagAlphaNumericChars = `\p{Nd}_` + hashtagAlphaChars
 
 	hashtagAlphaSet        = `[` + hashtagAlphaChars + `]`
 	hashtagAlphaNumericSet = `[` + hashtagAlphaNumericChars + `]`
